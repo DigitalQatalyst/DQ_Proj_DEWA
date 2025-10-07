@@ -1,32 +1,32 @@
 import React, { useMemo, useState, useRef, cloneElement, Component } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BookOpen, DollarSign, Briefcase, Users, Newspaper, Lightbulb, TrendingUp, Briefcase as JobIcon, Globe, Calendar, BookIcon, Award, MessageCircle, X, Clock, Compass, HeartHandshake, Building, Lock, ArrowRight, ChevronRight, Landmark, GraduationCap, BarChart } from 'lucide-react';
+import { BookOpen, Briefcase, Users, Newspaper, Lightbulb, TrendingUp, Briefcase as JobIcon, Globe, Calendar, BookIcon, Award, MessageCircle, X, Clock, Compass, HeartHandshake, Building, Lock, ArrowRight, ChevronRight, GraduationCap, BarChart } from 'lucide-react';
 import { AnimatedCounter, FadeInUpOnScroll, useInView } from './AnimationUtils';
 // AI Chatbot component
 const AIChatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
   return <>
       {/* Floating button */}
-      <button onClick={() => setIsOpen(true)} className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-50 animate-pulse hover:animate-none" aria-label="Open AI Assistant">
+      <button onClick={() => setIsOpen(true)} className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-[image:var(--dq-cta-gradient)] text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-50 animate-pulse hover:animate-none hover:brightness-105" aria-label="Open AI Assistant">
         <MessageCircle size={24} />
       </button>
       {/* Chat modal */}
       {isOpen && <div className="fixed bottom-24 right-6 w-80 sm:w-96 bg-white rounded-lg shadow-xl z-50 overflow-hidden border border-gray-200 animate-fade-in-up">
-          <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-4 text-white flex justify-between items-center">
+          <div className="bg-[image:var(--dq-cta-gradient)] p-4 text-white flex justify-between items-center">
             <h3 className="font-medium">AI Assistant</h3>
             <button onClick={() => setIsOpen(false)} className="text-white hover:text-gray-200 transition-colors">
               <X size={18} />
             </button>
           </div>
           <div className="p-4 h-80 overflow-y-auto bg-gray-50">
-            <div className="bg-blue-100 p-3 rounded-lg rounded-tl-none inline-block max-w-[85%] animate-fade-in">
+            <div className="bg-dq-navy/10 p-3 rounded-lg rounded-tl-none inline-block max-w-[85%] animate-fade-in">
               <p className="text-gray-800">
                 Hi there! How can I help you navigate the Abu Dhabi Enterprise
                 Journey Platform?
               </p>
             </div>
             <div className="mt-4">
-              <input type="text" placeholder="Type your question here..." className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300" autoFocus />
+              <input type="text" placeholder="Type your question here..." className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-dq-coral/40 transition-all duration-300" autoFocus />
             </div>
           </div>
         </div>}
@@ -36,10 +36,21 @@ const AIChatbot = () => {
 const ServiceCard = ({
   service,
   onClick,
-  isComingSoon = false
+  isComingSoon = false,
+  sectionColor = 'bg-dqsec-indigo'
+}: {
+  service: any;
+  onClick: () => void;
+  isComingSoon?: boolean;
+  sectionColor?: string;
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  return <div className={`rounded-xl shadow-md overflow-hidden transition-all duration-500 transform p-6 h-full ${isComingSoon ? 'bg-gradient-to-br from-gray-400 to-gray-500 opacity-75 hover:opacity-85' : `bg-gradient-to-br ${service.gradientFrom} ${service.gradientTo} hover:shadow-lg hover:-translate-y-1 hover:scale-102 cursor-pointer`}`} onClick={isComingSoon ? undefined : onClick} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
+  const baseClasses = 'rounded-xl shadow-md overflow-hidden transition-all duration-500 transform p-6 h-full';
+  const activeClasses = `${sectionColor} text-white hover:shadow-lg hover:-translate-y-1 hover:scale-102 cursor-pointer`;
+  const disabledClasses = 'bg-dqsec-tint text-dq-navy/50 opacity-80 cursor-not-allowed';
+  const activeButtonClasses = 'w-full inline-flex items-center justify-center gap-2 rounded-md bg-white text-[#030F35] text-sm font-semibold px-4 py-2 shadow-sm transition-colors duration-200 hover:bg-[#F7F9FF] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#030F35]/20';
+  const disabledButtonClasses = 'w-full inline-flex items-center justify-center gap-2 rounded-md bg-white/80 text-dq-navy/40 text-sm font-semibold px-4 py-2 shadow-sm cursor-not-allowed';
+  return <div className={`${baseClasses} ${isComingSoon ? disabledClasses : activeClasses}`} onClick={isComingSoon ? undefined : onClick} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       <div className="flex flex-col h-full relative">
         {isComingSoon && <div className="absolute top-0 right-0 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-full text-gray-800 flex items-center animate-pulse">
             <Clock size={12} className="mr-1" />
@@ -48,10 +59,10 @@ const ServiceCard = ({
         <div className={`w-14 h-14 rounded-full flex items-center justify-center mb-4 shadow-sm transition-all duration-500 ${isHovered ? 'transform -translate-y-2 animate-pulse' : ''}`} style={{
         background: 'white'
       }}>
-          <div className={isComingSoon ? 'text-gray-500' : 'text-blue-600'}>
+          <div className={isComingSoon ? 'text-gray-500' : 'text-dq-coral'}>
             {cloneElement(service.icon, {
             size: 24,
-            className: isComingSoon ? 'text-gray-500' : 'text-blue-600'
+            className: isComingSoon ? 'text-gray-500' : 'text-dq-coral'
           })}
           </div>
         </div>
@@ -61,14 +72,18 @@ const ServiceCard = ({
         <p className="text-sm text-white/90 mb-4 flex-grow">
           {service.description}
         </p>
-        <button className={`mt-auto px-4 py-2 rounded-md font-medium w-full transition-all duration-500 flex items-center justify-center ${isComingSoon ? 'bg-white text-gray-500 cursor-not-allowed' : 'bg-white text-blue-700 hover:bg-blue-50 border border-white/20'} ${isHovered && !isComingSoon ? 'opacity-100' : 'opacity-80'}`} disabled={isComingSoon} onClick={e => {
+        <button className={`${isComingSoon ? disabledButtonClasses : activeButtonClasses} mt-auto`} disabled={isComingSoon} onClick={e => {
         if (!isComingSoon) {
           e.stopPropagation();
           onClick();
         }
       }}>
-          {isComingSoon ? <Lock size={14} className="mr-2" /> : 'Explore Now'}
-          {!isComingSoon && <ChevronRight size={16} className={`ml-2 transition-transform duration-300 ${isHovered ? 'translate-x-1' : ''}`} />}
+          {isComingSoon ? <>
+            <Lock size={14} className="mr-2" />
+            Coming Soon
+          </> : <>
+            Explore Now →
+          </>}
         </button>
         {/* Background animation on hover */}
         {!isComingSoon && <div className="absolute inset-0 bg-white/5 opacity-0 transition-opacity duration-500" style={{
@@ -95,14 +110,11 @@ const CategoryHeader: React.FC<CategoryHeaderProps> = ({
   });
   return <div className="mb-6" ref={ref} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
       <div className="flex items-center mb-2">
-        <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-3 text-blue-600">
+        <div className="w-10 h-10 rounded-full bg-dq-navy/10 flex items-center justify-center mr-3 text-dq-navy">
           {icon}
         </div>
-        <h2 className="text-2xl font-bold text-gray-800 group relative">
+        <h2 className="text-2xl font-bold text-gray-800">
           {title}
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group" style={{
-          width: isHovered ? '100%' : '0%'
-        }}></span>
         </h2>
       </div>
       {count !== null && <div className="ml-13 text-gray-600">
@@ -119,140 +131,185 @@ export const HomePage: React.FC = () => {
   const allServices = useMemo(() => {
     return {
       finance: [{
-        id: 'funding',
-        title: 'Business Funding',
-        description: 'Access loans, grants, and investment opportunities tailored for Abu Dhabi businesses',
-        icon: <DollarSign />,
-        path: '/marketplace/non-financial',
-        gradientFrom: 'from-blue-600',
-        gradientTo: 'to-blue-400',
+        id: 'dq-lms-courses',
+        title: 'DQ LMS Courses',
+        description: 'Learning journeys & certifications (GHC, Digital, HoV, Day in DQ, Key Tools…).',
+        icon: <GraduationCap />,
+        path: '/marketplace/courses',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
         isActive: true
       }, {
-        id: 'financial',
-        title: 'Financial Services',
-        description: 'Access financial products to fuel your business growth and sustainability',
-        icon: <Landmark />,
-        path: '/marketplace/financial',
-        gradientFrom: 'from-blue-600',
-        gradientTo: 'to-blue-400',
+        id: 'dq-onboarding-flows',
+        title: 'DQ Onboarding Flows',
+        description: 'Step-by-step onboarding for associates, roles, and projects.',
+        icon: <Compass />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
         isActive: true
       }, {
-        id: 'investments',
-        title: 'Investment Marketplace',
-        description: 'Find investment opportunities and funding options for your business',
-        icon: <TrendingUp />,
-        path: '/investments',
-        gradientFrom: 'from-blue-600',
-        gradientTo: 'to-blue-400',
-        isActive: false
+        id: 'dq-guideline-center',
+        title: 'DQ Guideline Center',
+        description: 'Governance frameworks & working guidelines.',
+        icon: <BookIcon />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
+        isActive: true
       }, {
-        id: 'grants',
-        title: 'Grants Directory',
-        description: 'Find grants and funding opportunities for your business',
-        icon: <Award />,
-        path: '/grants',
-        gradientFrom: 'from-blue-600',
-        gradientTo: 'to-blue-400',
-        isActive: false
+        id: 'dq-faqs',
+        title: 'DQ FAQs',
+        description: 'Workspace and process knowledge base.',
+        icon: <MessageCircle />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
+        isActive: true
       }],
       advisory: [{
-        id: 'mentorship',
-        title: 'Expert Mentorship',
-        description: 'Connect with experienced business mentors who can guide your growth strategy',
-        icon: <HeartHandshake />,
-        path: '/marketplace/mentorship',
-        gradientFrom: 'from-purple-600',
-        gradientTo: 'to-purple-400',
-        isActive: false
-      }, {
-        id: 'business-services',
-        title: 'Business Services',
-        description: 'Find professional services to support and grow your business',
+        id: 'dq-services-requests',
+        title: 'DQ Services & Requests',
+        description: 'IT, HR, Finance, and Facilities service support.',
         icon: <Briefcase />,
-        path: '/marketplace/non-financial',
-        gradientFrom: 'from-purple-600',
-        gradientTo: 'to-purple-400',
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
         isActive: true
       }, {
-        id: 'opportunities',
-        title: 'Strategy Advisory',
-        description: 'Discover new business opportunities and strategic partnerships',
+        id: 'self-service-center',
+        title: 'Self-Service Center',
+        description: 'Tools, apps, dashboards, templates, and DMS.',
+        icon: <Globe />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
+        isActive: true
+      }, {
+        id: 'self-service-tools',
+        title: 'Self-Service Tools',
+        description: 'Self-service templates and dashboards.',
         icon: <Lightbulb />,
-        path: '/opportunities',
-        gradientFrom: 'from-purple-600',
-        gradientTo: 'to-purple-400',
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
+        isActive: false
+      }, {
+        id: 'service-integrations',
+        title: 'Service Integrations',
+        description: 'Integrations and connectors planned.',
+        icon: <TrendingUp />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
         isActive: false
       }],
       growth: [{
-        id: 'expansion',
-        title: 'Global Expansion',
-        description: "Leverage Abu Dhabi's strategic location to expand your business internationally",
-        icon: <Compass />,
-        path: '/marketplace/expansion',
-        gradientFrom: 'from-teal-600',
-        gradientTo: 'to-teal-400',
-        isActive: false
-      }, {
-        id: 'communities',
-        title: 'Business Communities',
-        description: 'Connect with business networks and expand your professional connections',
+        id: 'units-directory',
+        title: 'Units & Associates Directory',
+        description: 'Find colleagues and explore unit structures.',
         icon: <Users />,
-        path: '/communities',
-        gradientFrom: 'from-teal-600',
-        gradientTo: 'to-teal-400',
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
         isActive: true
       }, {
-        id: 'events',
-        title: 'Networking Events',
-        description: 'Discover and join business events and networking opportunities',
-        icon: <Calendar />,
-        path: '/events',
-        gradientFrom: 'from-teal-600',
-        gradientTo: 'to-teal-400',
-        isActive: false
+        id: 'communities-surveys',
+        title: 'Communities & Surveys',
+        description: 'Join groups, share feedback, and pulse checks.',
+        icon: <HeartHandshake />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
+        isActive: true
       }, {
-        id: 'jobs',
-        title: 'Jobs Marketplace',
-        description: 'Find talent or explore career opportunities',
-        icon: <JobIcon />,
-        path: '/jobs',
-        gradientFrom: 'from-teal-600',
-        gradientTo: 'to-teal-400',
-        isActive: false
+        id: 'events-calendars',
+        title: 'Events & Calendars',
+        description: 'Track key events, sessions, and team activities.',
+        icon: <Calendar />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
+        isActive: true
+      }, {
+        id: 'news-announcements',
+        title: 'News & Announcements',
+        description: 'Stay up-to-date on updates and insights.',
+        icon: <Newspaper />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
+        isActive: true
       }],
       learning: [{
-        id: 'courses',
-        title: 'Learning & Development',
-        description: 'Discover courses and training programs to enhance your business skills',
-        icon: <BookOpen />,
-        path: '/marketplace/courses',
-        gradientFrom: 'from-amber-600',
-        gradientTo: 'to-amber-400',
+        id: 'asset-library',
+        title: 'Asset Library',
+        description: 'Design system, infographics, and branded resources.',
+        icon: <Building />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
         isActive: true
       }, {
-        id: 'digital',
-        title: 'Digital Solutions',
-        description: 'Explore digital tools and solutions for your business',
-        icon: <Globe />,
-        path: '/digital-services',
-        gradientFrom: 'from-amber-600',
-        gradientTo: 'to-amber-400',
+        id: 'blueprint-library',
+        title: 'Blueprint Library',
+        description: 'Products & solution blueprints (Discern, Designs, Deploys, Drive).',
+        icon: <Compass />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
+        isActive: true
+      }, {
+        id: 'strategy-center',
+        title: 'Strategy Center',
+        description: 'DQ vision, milestones, DNA, and initiatives.',
+        icon: <BarChart />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
+        isActive: true
+      }, {
+        id: 'job-center',
+        title: 'Job Center',
+        description: 'Vacancies, referral programs, and career mobility.',
+        icon: <JobIcon />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
+        isActive: true
+      }, {
+        id: 'glossary',
+        title: 'Glossary',
+        description: 'Key terms and definitions used across DQ.',
+        icon: <BookOpen />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
         isActive: false
       }, {
-        id: 'news',
-        title: 'Knowledge Hub',
-        description: 'Stay updated with the latest business news and industry insights',
-        icon: <Newspaper />,
-        path: '/marketplace/knowledge-hub',
-        gradientFrom: 'from-amber-600',
-        gradientTo: 'to-amber-400',
-        isActive: true
-      }, {
-        id: 'law',
-        title: 'Legal & Compliance',
-        description: 'Access resources on UAE business laws and regulations',
+        id: 'knowledge-base',
+        title: 'Knowledge Base',
+        description: 'Curated how-tos and troubleshooting guides.',
         icon: <BookIcon />,
-        path: '/law',
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
+        isActive: false
+      }, {
+        id: 'research-hub',
+        title: 'Research Hub',
+        description: 'Insights, reports, and studies.',
+        icon: <Lightbulb />,
+        path: '#',
+        gradientFrom: 'from-dq-navy',
+        gradientTo: 'to-dq-coral',
+        isActive: false
+      }, {
+        id: 'template-library',
+        title: 'Template Library',
+        description: 'Ready-to-use docs and slide templates.',
+        icon: <Award />,
+        path: '#',
         gradientFrom: 'from-amber-600',
         gradientTo: 'to-amber-400',
         isActive: false
@@ -261,6 +318,12 @@ export const HomePage: React.FC = () => {
   }, []);
   // State for managing "View All" modal
   const [showAllComingSoon, setShowAllComingSoon] = useState(false);
+  const sectionColors: Record<string, string> = {
+    'Learning & Enablement': 'bg-dqsec-indigo',
+    'Services & Requests': 'bg-dqsec-teal',
+    'Collaboration & Communities': 'bg-dqsec-aqua',
+    'Resources & Libraries': 'bg-dqsec-sky'
+  };
   // Function to handle service click
   const handleServiceClick = path => {
     navigate(path);
@@ -273,55 +336,53 @@ export const HomePage: React.FC = () => {
             <h2 className="text-3xl font-bold text-gray-900 mb-3">
               Services & Marketplaces
             </h2>
-            <div className="relative">
+            <div>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Discover tailored solutions organized by category to accelerate
-                your business growth in Abu Dhabi
+                Discover tailored tools, learning, and resources organized by category to help you work smarter and grow at DQ.
               </p>
-              <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-400"></div>
             </div>
           </FadeInUpOnScroll>
-          {/* Finance & Funding Category */}
-          <div className="mb-10">
-            <FadeInUpOnScroll>
-              <CategoryHeader icon={<DollarSign size={24} />} title="Finance & Funding" count={12} />
-            </FadeInUpOnScroll>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {allServices.finance.map((service, index) => <FadeInUpOnScroll key={service.id} delay={index * 0.1}>
-                  <ServiceCard service={service} onClick={() => handleServiceClick(service.path)} isComingSoon={!service.isActive} />
-                </FadeInUpOnScroll>)}
-            </div>
-          </div>
-          {/* Advisory & Expertise Category */}
-          <div className="mb-10">
-            <FadeInUpOnScroll>
-              <CategoryHeader icon={<BarChart size={24} />} title="Advisory & Expertise" count={8} />
-            </FadeInUpOnScroll>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {allServices.advisory.map((service, index) => <FadeInUpOnScroll key={service.id} delay={index * 0.1}>
-                  <ServiceCard service={service} onClick={() => handleServiceClick(service.path)} isComingSoon={!service.isActive} />
-                </FadeInUpOnScroll>)}
-            </div>
-          </div>
-          {/* Growth & Expansion Category */}
-          <div className="mb-10">
-            <FadeInUpOnScroll>
-              <CategoryHeader icon={<Globe size={24} />} title="Growth & Expansion" count={10} />
-            </FadeInUpOnScroll>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {allServices.growth.map((service, index) => <FadeInUpOnScroll key={service.id} delay={index * 0.1}>
-                  <ServiceCard service={service} onClick={() => handleServiceClick(service.path)} isComingSoon={!service.isActive} />
-                </FadeInUpOnScroll>)}
-            </div>
-          </div>
           {/* Learning & Enablement Category */}
           <div className="mb-10">
             <FadeInUpOnScroll>
-              <CategoryHeader icon={<GraduationCap size={24} />} title="Learning & Enablement" count={15} />
+              <CategoryHeader icon={<GraduationCap size={24} />} title="Learning & Enablement" count={4} />
+            </FadeInUpOnScroll>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {allServices.finance.map((service, index) => <FadeInUpOnScroll key={service.id} delay={index * 0.1}>
+                  <ServiceCard service={service} sectionColor={sectionColors['Learning & Enablement']} onClick={() => handleServiceClick(service.path)} isComingSoon={!service.isActive} />
+                </FadeInUpOnScroll>)}
+            </div>
+          </div>
+          {/* Services & Requests Category */}
+          <div className="mb-10">
+            <FadeInUpOnScroll>
+              <CategoryHeader icon={<Briefcase size={24} />} title="Services & Requests" count={4} />
+            </FadeInUpOnScroll>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {allServices.advisory.map((service, index) => <FadeInUpOnScroll key={service.id} delay={index * 0.1}>
+                  <ServiceCard service={service} sectionColor={sectionColors['Services & Requests']} onClick={() => handleServiceClick(service.path)} isComingSoon={!service.isActive} />
+                </FadeInUpOnScroll>)}
+            </div>
+          </div>
+          {/* Collaboration & Communities Category */}
+          <div className="mb-10">
+            <FadeInUpOnScroll>
+              <CategoryHeader icon={<Users size={24} />} title="Collaboration & Communities" count={4} />
+            </FadeInUpOnScroll>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {allServices.growth.map((service, index) => <FadeInUpOnScroll key={service.id} delay={index * 0.1}>
+                  <ServiceCard service={service} sectionColor={sectionColors['Collaboration & Communities']} onClick={() => handleServiceClick(service.path)} isComingSoon={!service.isActive} />
+                </FadeInUpOnScroll>)}
+            </div>
+          </div>
+          {/* Resources & Libraries Category */}
+          <div className="mb-10">
+            <FadeInUpOnScroll>
+              <CategoryHeader icon={<BookOpen size={24} />} title="Resources & Libraries" count={8} />
             </FadeInUpOnScroll>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {allServices.learning.map((service, index) => <FadeInUpOnScroll key={service.id} delay={index * 0.1}>
-                  <ServiceCard service={service} onClick={() => handleServiceClick(service.path)} isComingSoon={!service.isActive} />
+                  <ServiceCard service={service} sectionColor={sectionColors['Resources & Libraries']} onClick={() => handleServiceClick(service.path)} isComingSoon={!service.isActive} />
                 </FadeInUpOnScroll>)}
             </div>
           </div>

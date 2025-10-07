@@ -38,20 +38,20 @@ const StageCard: React.FC<StageCardProps> = ({
           <h4 className="font-semibold text-gray-700 mb-2">Key Benefits:</h4>
           <ul className="text-gray-600 space-y-1">
             {benefits.map((benefit, i) => <li key={i} className="flex items-start">
-                <span className={`mr-2 transition-colors duration-300 ${isActive ? 'text-blue-500' : 'text-blue-600'}`}>
+                <span className={`mr-2 transition-colors duration-300 ${isActive ? 'text-dq-coral' : 'text-dq-navy'}`}>
                   •
                 </span>
                 <span>{benefit}</span>
               </li>)}
           </ul>
         </div>
-        <button onClick={onClick} className={`mt-auto text-white font-medium py-2 px-4 rounded-md transition-all duration-300 flex items-center justify-center overflow-hidden group ${isActive ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800' : 'bg-blue-600 hover:bg-blue-700'}`}>
+        <button onClick={onClick} className={`mt-auto text-white font-medium py-2 px-4 rounded-md transition-all duration-300 flex items-center justify-center overflow-hidden group ${isActive ? 'bg-[image:var(--dq-cta-gradient)] hover:brightness-105' : 'bg-dq-navy hover:bg-dq-navy/90'}`}>
           {ctaText}
           <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
         </button>
       </div>
       {/* Stage number indicator */}
-      <div className={`absolute top-2 right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${isActive ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-600'}`}>
+      <div className={`absolute top-2 right-2 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${isActive ? 'bg-dq-coral text-white' : 'bg-gray-200 text-gray-600'}`}>
         {index + 1}
       </div>
     </div>;
@@ -99,74 +99,72 @@ const EnterpriseStages: React.FC = () => {
   }, []);
   const stages = [{
     id: 'ideation',
-    title: 'Ideation',
-    description: 'Transform your business idea into a viable concept',
-    benefits: ['Idea validation workshops', 'Market research support', 'Business model canvas tools'],
+    title: 'Learn',
+    description: 'Build awareness and foundational skills to get started.',
+    benefits: ['Onboarding guides & flows', 'Introductory LMS courses', 'Access to knowledge hub'],
     icon: <Lightbulb size={24} className="transition-colors duration-300" />,
-    ctaText: 'Start Your Idea',
+    ctaText: 'Start Learning',
     path: '/stages/ideation'
   }, {
     id: 'launch',
-    title: 'Launch',
-    description: 'Set up and launch your business in Abu Dhabi',
-    benefits: ['Business registration support', 'Startup funding access', 'Office space solutions'],
+    title: 'Follow',
+    description: 'Work with guidance while practicing agile ways of working.',
+    benefits: ['Task checklists & templates', 'Mentor & buddy system', 'Workspace familiarization'],
     icon: <Rocket size={24} className="transition-colors duration-300" />,
-    ctaText: 'Launch Your Business',
+    ctaText: 'Follow the Path',
     path: '/stages/launch'
   }, {
     id: 'growth',
-    title: 'Growth',
-    description: 'Scale your operations and expand your customer base',
-    benefits: ['Growth financing options', 'Marketing & sales support', 'Talent acquisition services'],
+    title: 'Assist',
+    description: 'Support your team and contribute independently.',
+    benefits: ['Agile boards & collaboration tools', 'Access to DQ Services & Requests', 'Team-based tasks'],
     icon: <TrendingUp size={24} className="transition-colors duration-300" />,
-    ctaText: 'Accelerate Growth',
+    ctaText: 'Assist Your Team',
     path: '/stages/growth'
   }, {
     id: 'expansion',
-    title: 'Expansion',
-    description: 'Enter new markets and diversify your business',
-    benefits: ['International market entry', 'Product diversification', 'Strategic partnerships'],
+    title: 'Apply',
+    description: 'Take ownership of your tasks and deliver outcomes.',
+    benefits: ['Productivity dashboards', 'Specialized LMS modules', 'Cross-unit work opportunities'],
     icon: <BarChart3 size={24} className="transition-colors duration-300" />,
-    ctaText: 'Expand Your Reach',
+    ctaText: 'Apply Your Skills',
     path: '/stages/expansion'
   }, {
     id: 'optimization',
-    title: 'Optimization',
-    description: 'Streamline operations and maximize efficiency',
-    benefits: ['Process optimization', 'Technology integration', 'Cost reduction strategies'],
+    title: 'Enable',
+    description: 'Support others by leading small initiatives or workflows.',
+    benefits: ['Leadership toolkits', 'Workflow automation tools', 'Team collaboration spaces'],
     icon: <Award size={24} className="transition-colors duration-300" />,
-    ctaText: 'Optimize Operations',
+    ctaText: 'Enable Others',
     path: '/stages/optimization'
   }, {
     id: 'transformation',
-    title: 'Transformation',
-    description: 'Reinvent your business model for future growth',
-    benefits: ['Digital transformation', 'Business model innovation', 'Sustainability integration'],
+    title: 'Transform',
+    description: 'Drive innovation and shape new ways of working.',
+    benefits: ['Transformation playbooks', 'Strategy & innovation hubs', 'Access to DQ Communities'],
     icon: <Code size={24} className="transition-colors duration-300" />,
-    ctaText: 'Transform Your Business',
+    ctaText: 'Transform Your Work',
     path: '/stages/transformation'
   }];
   return <div className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         <FadeInUpOnScroll className="text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-3">
-            Business Growth Journey
+            Associate Growth Journey
           </h2>
-          <div className="relative">
+          <div>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Find the right support for every stage of your business
-              development
+              Find the right support for every stage of your learning, working, and career development.
             </p>
-            <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-400"></div>
           </div>
         </FadeInUpOnScroll>
         {/* Timeline connector (visible on desktop) */}
-        <div ref={timelineRef} className="hidden lg:block relative max-w-6xl mx-auto h-2 bg-gray-200 rounded-full my-12">
-          <div className="absolute top-0 left-0 h-2 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full transition-all duration-1000 ease-out" style={{
+        <div ref={timelineRef} className="hidden lg:block relative max-w-6xl mx-auto h-2 bg-dq-navy/20 rounded-full my-12">
+          <div className="absolute top-0 left-0 h-2 bg-[image:var(--dq-cta-gradient)] rounded-full transition-all duration-1000 ease-out" style={{
           width: isInView ? `${(activeIndex + 1) / stages.length * 100}%` : '0%'
         }}></div>
           {/* Stage markers */}
-          {stages.map((_, index) => <div key={index} className={`absolute top-0 transform -translate-y-1/2 w-6 h-6 rounded-full transition-all duration-500 ${index <= activeIndex ? 'bg-blue-500 border-2 border-white' : 'bg-gray-300'}`} style={{
+          {stages.map((_, index) => <div key={index} className={`absolute top-0 transform -translate-y-1/2 w-6 h-6 rounded-full transition-all duration-500 ${index <= activeIndex ? 'bg-dq-coral border-2 border-white' : 'bg-gray-300'}`} style={{
           left: `calc(${index / (stages.length - 1) * 100}% - 12px)`,
           transform: 'translateY(-50%)',
           transition: 'background-color 0.5s ease-out'
@@ -193,7 +191,7 @@ const EnterpriseStages: React.FC = () => {
         {/* Mobile Scroll Indicator */}
         <div className="flex md:hidden justify-center mt-4">
           <div className="flex space-x-1">
-            {stages.map((_, index) => <button key={index} className={`h-1 rounded-full w-6 transition-all duration-300 ${index === activeIndex ? 'bg-blue-600 w-10' : 'bg-gray-300'}`} onClick={() => setActiveIndex(index)} aria-label={`Go to stage ${index + 1}`} />)}
+            {stages.map((_, index) => <button key={index} className={`h-1 rounded-full w-6 transition-all duration-300 ${index === activeIndex ? 'bg-dq-coral w-10' : 'bg-gray-300'}`} onClick={() => setActiveIndex(index)} aria-label={`Go to stage ${index + 1}`} />)}
           </div>
         </div>
       </div>

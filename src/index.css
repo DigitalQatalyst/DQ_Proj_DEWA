@@ -4,6 +4,14 @@
 @import "tailwindcss/utilities";
 /* DO NOT DELETE THESE TAILWIND IMPORTS, OTHERWISE THE STYLING WILL NOT RENDER AT ALL */
 
+:root {
+  --dq-navy: #030F35;
+  --dq-coral: #FB5535;
+  --dq-white: #FFFFFF;
+  --dq-header-gradient: linear-gradient(90deg, var(--dq-navy) 0%, var(--dq-coral) 55%, var(--dq-white) 100%);
+  --dq-cta-gradient: linear-gradient(90deg, var(--dq-navy) 0%, var(--dq-coral) 100%);
+}
+
 .no-scroll {
   overflow: hidden;
 }
