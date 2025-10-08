@@ -510,13 +510,12 @@ const ProofAndTrust: React.FC = () => {
         {/* Why Abu Dhabi / Platform Impact */}
         <div className="mb-16">
           <FadeInUpOnScroll className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">
-              Why Agile Working for Learning and Growth
+            <h2 className="text-3xl font-bold text-gray-900 mb-3 clamp-1">
+              Why Agile Working for faster Growth
             </h2>
             <div>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8 text-balance">
-                The DQ Digital Workspace removes friction so people can do their best work.<br />
-                By unifying requests, learning, knowledge, and collaboration, associates move faster and grow with confidence.
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8 text-balance clamp-2">
+                DQ Digital Workspace unifies learning, requests, and collaboration so everyone can work smarter, faster, and grow with confidence.
               </p>
             </div>
           </FadeInUpOnScroll>
@@ -540,12 +539,12 @@ const ProofAndTrust: React.FC = () => {
         {/* Success Stories */}
         <div className="mb-16 bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 overflow-hidden relative">
           <FadeInUpOnScroll className="text-center mb-10 relative z-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3 clamp-1">
               Success Stories from DQ Employees
             </h2>
             <div>
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Hear how teams enhanced productivity and collaboration using the Digital Workspace.
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto clamp-2">
+                Discover how DQ teams use the Digital Workspace to boost productivity and collaboration every day.
               </p>
             </div>
           </FadeInUpOnScroll>
@@ -555,12 +554,12 @@ const ProofAndTrust: React.FC = () => {
         <div className="mb-16 bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 overflow-hidden relative">
           {/* Section Title with Animation */}
           <HorizontalScrollReveal direction="left" className="text-center mb-10 relative z-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3 clamp-1">
               Our Four Pillars of Success
             </h2>
             <div className="relative">
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Our network of governance, operations, platform, and delivery units ensures comprehensive support for every employee’s working journey.
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto clamp-2">
+                Governance, operations, platforms, and delivery — DQ's four pillars that drive every associate's success.
               </p>
             </div>
           </HorizontalScrollReveal>

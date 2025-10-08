@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Lightbulb, Code, Rocket, TrendingUp, BarChart3, Award, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
+import { Lightbulb, Code, Rocket, TrendingUp, BarChart3, Award, Globe, ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { FadeInUpOnScroll, HorizontalScrollReveal } from './AnimationUtils';
 interface StageCardProps {
@@ -25,15 +25,18 @@ const StageCard: React.FC<StageCardProps> = ({
   setActiveIndex
 }) => {
   const isActive = index === activeIndex;
-  return <div className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 min-w-[300px] flex-shrink-0 md:min-w-0 relative ${isActive ? 'shadow-lg transform scale-105 md:scale-100 border-2 border-blue-500' : 'hover:shadow-lg hover:-translate-y-1'}`} onMouseEnter={() => setActiveIndex(index)}>
+  const baseClasses = 'bg-white rounded-xl shadow-md overflow-hidden transition-all duration-300 min-w-[300px] flex flex-col flex-shrink-0 md:min-w-0 relative h-full min-h-[420px]';
+  const activeClasses = 'ring-2 ring-blue-500 shadow-lg';
+  const inactiveClasses = 'hover:shadow-lg hover:-translate-y-1';
+  return <div className={`${baseClasses} ${isActive ? activeClasses : inactiveClasses}`} onMouseEnter={() => setActiveIndex(index)}>
       <div className="p-6 flex flex-col h-full">
         <div className="flex items-center mb-4">
           <div className={`p-3 rounded-full mr-4 transition-colors duration-300 ${isActive ? 'bg-blue-500 text-white' : 'bg-blue-100 text-blue-600'}`}>
             {icon}
           </div>
-          <h3 className="text-xl font-bold text-gray-800">{title}</h3>
+          <h3 className="text-xl font-bold text-gray-800 clamp-1">{title}</h3>
         </div>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <p className="text-gray-600 mb-4 clamp-2">{description}</p>
         <div className="mb-6">
           <h4 className="font-semibold text-gray-700 mb-2">Key Benefits:</h4>
           <ul className="text-gray-600 space-y-1">
@@ -98,63 +101,85 @@ const EnterpriseStages: React.FC = () => {
     };
   }, []);
   const stages = [{
-    id: 'ideation',
+    id: 'learn',
+    level: 'L0',
+    order: 1,
     title: 'Learn',
-    description: 'Build awareness and foundational skills to get started.',
-    benefits: ['Onboarding guides & flows', 'Introductory LMS courses', 'Access to knowledge hub'],
+    description: 'Get onboarded and build foundational DQ knowledge.',
+    benefits: ['Onboarding guides & workspace flows', 'LMS starter courses', 'Access to the DQ Knowledge Hub'],
     icon: <Lightbulb size={24} className="transition-colors duration-300" />,
     ctaText: 'Start Learning',
-    path: '/stages/ideation'
+    path: '/stages/learn'
   }, {
-    id: 'launch',
+    id: 'follow',
+    level: 'L1',
+    order: 2,
     title: 'Follow',
-    description: 'Work with guidance while practicing agile ways of working.',
-    benefits: ['Task checklists & templates', 'Mentor & buddy system', 'Workspace familiarization'],
+    description: 'Learn by doing with guidance and practice DQ’s agile ways.',
+    benefits: ['Task checklists & daily templates', 'Buddy & mentorship system', 'Workspace orientation'],
     icon: <Rocket size={24} className="transition-colors duration-300" />,
     ctaText: 'Follow the Path',
-    path: '/stages/launch'
+    path: '/stages/follow'
   }, {
-    id: 'growth',
+    id: 'assist',
+    level: 'L2',
+    order: 3,
     title: 'Assist',
-    description: 'Support your team and contribute independently.',
-    benefits: ['Agile boards & collaboration tools', 'Access to DQ Services & Requests', 'Team-based tasks'],
+    description: 'Contribute independently and collaborate across your team.',
+    benefits: ['Agile boards & teamwork tools', 'DQ Services & Requests access', 'Team deliverables participation'],
     icon: <TrendingUp size={24} className="transition-colors duration-300" />,
     ctaText: 'Assist Your Team',
-    path: '/stages/growth'
+    path: '/stages/assist'
   }, {
-    id: 'expansion',
+    id: 'apply',
+    level: 'L3',
+    order: 4,
     title: 'Apply',
-    description: 'Take ownership of your tasks and deliver outcomes.',
-    benefits: ['Productivity dashboards', 'Specialized LMS modules', 'Cross-unit work opportunities'],
+    description: 'Own outcomes and strengthen delivery discipline.',
+    benefits: ['Productivity dashboards', 'Specialized LMS modules', 'Cross-unit project opportunities'],
     icon: <BarChart3 size={24} className="transition-colors duration-300" />,
     ctaText: 'Apply Your Skills',
-    path: '/stages/expansion'
+    path: '/stages/apply'
   }, {
-    id: 'optimization',
+    id: 'enable',
+    level: 'L4',
+    order: 5,
     title: 'Enable',
-    description: 'Support others by leading small initiatives or workflows.',
-    benefits: ['Leadership toolkits', 'Workflow automation tools', 'Team collaboration spaces'],
+    description: 'Lead small initiatives and empower others through collaboration.',
+    benefits: ['Leadership & facilitation guides', 'Workflow automation tools', 'Collaboration workspaces'],
     icon: <Award size={24} className="transition-colors duration-300" />,
     ctaText: 'Enable Others',
-    path: '/stages/optimization'
+    path: '/stages/enable'
   }, {
-    id: 'transformation',
-    title: 'Transform',
-    description: 'Drive innovation and shape new ways of working.',
-    benefits: ['Transformation playbooks', 'Strategy & innovation hubs', 'Access to DQ Communities'],
+    id: 'influence',
+    level: 'L6',
+    order: 6,
+    title: 'Influence',
+    description: 'Steer cross-unit outcomes and scale good practices.',
+    benefits: ['Playbooks for cross-unit delivery', 'Community of practice leadership', 'Change & adoption toolkits'],
+    icon: <Globe size={24} className="transition-colors duration-300" />,
+    ctaText: 'Influence at Scale',
+    path: '/stages/influence'
+  }, {
+    id: 'inspire',
+    level: 'L7',
+    order: 7,
+    title: 'Inspire',
+    description: 'Shape the future of work and inspire the wider ecosystem.',
+    benefits: ['Strategy & vision hubs', 'Innovation & transformation forums', 'External thought leadership'],
     icon: <Code size={24} className="transition-colors duration-300" />,
-    ctaText: 'Transform Your Work',
-    path: '/stages/transformation'
+    ctaText: 'Inspire the Market',
+    path: '/stages/inspire'
   }];
   return <div className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         <FadeInUpOnScroll className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3 clamp-1">
             Associate Growth Journey
           </h2>
           <div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Find the right support for every stage of your learning, working, and career development.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto clamp-2">
+              Every step of your journey matters — learn, co-work, and grow through every stage of your DQ career.
             </p>
           </div>
         </FadeInUpOnScroll>

@@ -57,7 +57,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight overflow-hidden">
             
               <AnimatedText
-                text="Your Digital Workspace Hub at DQ"
+                text="Your Digital Workspace"
                 gap="1rem"
               />
             

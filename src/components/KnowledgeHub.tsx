@@ -374,11 +374,11 @@ const KnowledgeHubContent = ({
   return <div className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         <FadeInUpOnScroll className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3 clamp-1">
             Stay Ahead with Workspace Insights
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Access the latest updates, learning events, and digital resources to help you grow and work smarter at DQ.
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto clamp-2">
+            Stay current with DQ updates, insights, and events designed to help you work smarter and grow every day.
           </p>
         </FadeInUpOnScroll>
         {/* Segmented Tabs */}
