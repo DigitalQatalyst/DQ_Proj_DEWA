@@ -19,13 +19,13 @@ interface Testimonial {
 }
 const testimonials: Testimonial[] = [{
   id: '1',
-  name: 'Ahmed Al Mansoori',
-  position: 'Founder & CEO',
-  company: 'TechInnovate',
+  name: 'Salem Wasike',
+  position: 'Product Owner - DQ Deploys',
+  company: 'Digital Qatalyst',
   companyLogo: 'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
-  quote: 'The Enterprise Journey Platform connected us with the right financial services that helped us scale our operations across the UAE.',
-  fullQuote: "The Enterprise Journey Platform connected us with the right financial services that helped us scale our operations across the UAE. The guidance was invaluable and we saw immediate results. Our company has grown by 300% in the last year alone, and we've been able to expand into new markets thanks to the connections and resources provided by the platform.",
+  quote: 'Agile Essentials and DTMF learning paths reduced blockers by 40% and sped up feature delivery.',
+  fullQuote: "Through the DQ LMS, our teams completed Agile Essentials and DTMF learning paths. The shared practices cut delivery blockers by 40% and improved flow, which helped us ship features faster and with clearer ownership.",
   rating: 5,
   videoThumbnail: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   videoUrl: 'https://samplelib.com/lib/preview/mp4/sample-5s.mp4',
@@ -34,13 +34,13 @@ const testimonials: Testimonial[] = [{
   metricColor: 'green'
 }, {
   id: '2',
-  name: 'Fatima Al Hashimi',
-  position: 'Managing Director',
-  company: 'Green Solutions',
+  name: 'Sharavi Chander',
+  position: 'Head of DQ Deploys',
+  company: 'Digital Qatalyst',
   companyLogo: 'https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   avatar: 'https://randomuser.me/api/portraits/women/44.jpg',
-  quote: 'As a sustainable business, we found specialized support through the platform that understood our unique needs.',
-  fullQuote: "As a sustainable business, we found specialized support through the platform that understood our unique needs. The mentorship programs transformed our approach to market entry and helped us navigate regulatory challenges. We've been able to reduce our time to market by 40%, which has been crucial in our competitive industry.",
+  quote: '80+ team certifications built a learning culture that lifted consistency across releases.',
+  fullQuote: "The LMS pathways and peer sessions led to 80+ certifications across Deploys. That shared foundation in tooling and governance raised our consistency and confidence from planning through release.",
   rating: 5,
   videoThumbnail: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   videoUrl: 'https://samplelib.com/lib/preview/mp4/sample-10s.mp4',
@@ -49,13 +49,13 @@ const testimonials: Testimonial[] = [{
   metricColor: 'blue'
 }, {
   id: '3',
-  name: 'Mohammed Al Zaabi',
-  position: 'Co-founder',
-  company: 'Falcon Logistics',
+  name: 'Mohamed Thameez',
+  position: 'Product Manager',
+  company: 'Digital Qatalyst',
   companyLogo: 'https://images.unsplash.com/photo-1566125882500-87e10f726cdc?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   avatar: 'https://randomuser.me/api/portraits/men/22.jpg',
-  quote: "From startup to expansion, the platform has been our trusted partner. The courses and community connections opened doors we didn't know existed.",
-  fullQuote: "From startup to expansion, the platform has been our trusted partner. The courses and community connections opened doors we didn't know existed. We've experienced 200% growth in our customer base since joining the platform, and we've been able to secure contracts with major players in the logistics industry.",
+  quote: "Cross-unit learning spaces cut our feature turnaround time by 30%.",
+  fullQuote: "Standard playbooks, shared boards, and course-led upskilling created tighter handoffs between Design, Build, and Deploy. As a result, our feature turnaround time improved by 30% with fewer reworks.",
   rating: 4,
   videoThumbnail: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   videoUrl: 'https://samplelib.com/lib/preview/mp4/sample-15s.mp4',
@@ -66,88 +66,67 @@ const testimonials: Testimonial[] = [{
 // Partner categories for the grid
 const partnerCategories = [{
   id: 'government',
-  title: 'Government Bodies',
-  subtitle: 'Key regulatory authorities and public sector partners',
+  title: 'Governance Units',
+  subtitle: 'Leadership, strategy, and value management for enterprise alignment',
   icon: <Building2 size={28} />,
-  metric: '25+',
+  metric: '4+',
   color: 'indigo-600'
 }, {
   id: 'financial',
-  title: 'Financial Partners',
-  subtitle: 'Banks, investment firms, and funding institutions',
+  title: 'Operations Units',
+  subtitle: 'HR, Finance, and Deals support factories for day-to-day enablement',
   icon: <Landmark size={28} />,
-  metric: '50+',
+  metric: '5+',
   color: 'yellow-500'
 }, {
   id: 'service',
-  title: 'Service Providers',
-  subtitle: 'Specialized business support and consultancy',
+  title: 'Platform Units',
+  subtitle: 'Intelligence, Solutions, Security, and Products driving digital platforms',
   icon: <Users2 size={28} />,
-  metric: '500+',
+  metric: '6+',
   color: 'blue-600'
 }, {
   id: 'network',
-  title: 'Business Network',
-  subtitle: 'Community of enterprises and industry leaders',
+  title: 'Delivery Units',
+  subtitle: 'Design, Deploys, and Accounts teams ensuring outcomes and engagements',
   icon: <Network size={28} />,
-  metric: '5000+',
+  metric: '3+',
   color: 'orange-500'
 }];
 const partnerLogos = [
-  { name: 'Abu Dhabi Ports', logo: '/logo/ad-ports-logo.webp' },
-  { name: 'Abu Dhabi SME Hub', logo: '/logo/ad-sme-hub-logo.webp' },
-  { name: 'ADCB', logo: '/logo/adcb-logo.webp' },
-  { name: 'ADIB', logo: '/logo/adib-logo.webp' },
-  { name: 'ADQ', logo: '/logo/adq-logo.webp' },
-  { name: 'ALDAR', logo: '/logo/aldar-logo.webp' },
-  { name: 'ASPIRE', logo: '/logo/aspire-logo.webp' },
-  { name: 'ATRC', logo: '/logo/atrc-logo.webp' },
-  { name: 'Emirates Development Bank', logo: '/logo/edb-logo.webp' },
-  { name: 'Etihad Airways', logo: '/logo/etihad-logo.webp' },
-  { name: 'Etisalat', logo: '/logo/etisalat-logo.webp' },
-  { name: 'First Abu Dhabi Bank', logo: '/logo/fab-logo.webp' },
-  { name: 'Masdar', logo: '/logo/masdar-logo.webp' },
-  { name: 'Mohammed Bin Zayed Innovation Fund', logo: '/logo/mbzif-logo.webp' },
-  { name: 'Mubadala', logo: '/logo/mubadala-logo.webp' },
-  { name: 'TII', logo: '/logo/tii-logo.webp' },
-  { name: 'Venture One', logo: '/logo/venture-one-logo.webp' }
+  { name: 'Prodev',   logo: '/logo/prodev.png' },
+  { name: 'Soldew',   logo: '/logo/soldew.png' },
+  { name: 'Finance',  logo: '/logo/finance.png' },
+  { name: 'HRA',      logo: '/logo/hra.png' },
+  { name: 'Inteldev', logo: '/logo/inteldev.png' },
 ];
-const strategicPartners = [{
-  name: 'Abu Dhabi Department of Economic Development',
-  logo: '/logo/addad-logo.webp'
-}, {
-  name: 'Abu Dhabi Investment Office',
-  logo: '/logo/abio-logo.webp'
-}, {
-  name: 'Mubadala',
-  logo: '/logo/mubadala-logo.webp'
-}, {
-  name: 'First Abu Dhabi Bank',
-  logo: '/logo/fab-logo.webp'
-}, {
-  name: 'Etihad Airways',
-  logo: '/logo/etihad-logo.webp'
-}];
+const strategicPartners = [
+  { name: 'Prodev',   logo: '/logo/prodev.png' },
+  { name: 'Soldew',   logo: '/logo/soldew.png' },
+  { name: 'Finance',  logo: '/logo/finance.png' },
+  { name: 'HRA',      logo: '/logo/hra.png' },
+  { name: 'Inteldev', logo: '/logo/inteldev.png' },
+];
 const impactStats = [{
-  label: 'SMEs Supported',
+  label: 'Faster Time to Close',
   value: 5000,
-  icon: <Users size={24} className="text-blue-600" />
+  icon: <Users size={24} className="text-dq-coral" />
 }, {
-  label: 'Funding Facilitated',
+  label: 'Hours of Focus Reclaimed',
   value: 500,
   prefix: 'AED ',
   suffix: 'M+',
-  icon: <DollarSign size={24} className="text-blue-600" />
+  icon: <DollarSign size={24} className="text-dq-coral" />
 }, {
-  label: 'Services Accessed',
+  label: 'Learning & Development Resources Accessed',
   value: 15000,
   suffix: '+',
-  icon: <TrendingUp size={24} className="text-blue-600" />
+  icon: <TrendingUp size={24} className="text-dq-coral" />
 }, {
-  label: 'Success Rate',
+  label: 'Growth in Collaboration & Outcomes',
   value: 87,
   suffix: '%',
-  icon: <Award size={24} className="text-blue-600" />
+  icon: <Award size={24} className="text-dq-coral" />
 }];
 const VideoTestimonialCard = ({
   testimonial,
@@ -185,7 +164,7 @@ const VideoTestimonialCard = ({
         </div>
         {/* Metric */}
         <div className="mt-auto">
-          <div className={`text-2xl font-bold mb-1 ${testimonial.metricColor === 'green' ? 'text-green-500' : 'text-blue-500'}`}>
+          <div className={`text-2xl font-bold mb-1 ${testimonial.metricColor === 'green' ? 'text-green-500' : 'text-dq-coral'}`}>
             {testimonial.metric}{' '}
             <span className="text-white text-lg font-medium">
               {testimonial.metricLabel}
@@ -283,11 +262,11 @@ const TestimonialModal = ({
           <div className="mt-6 pt-6 border-t border-gray-200">
             <div className="flex items-center justify-between">
               <div>
-                <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${testimonial.metricColor === 'green' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'}`}>
+                <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${testimonial.metricColor === 'green' ? 'bg-green-100 text-green-800' : 'bg-dq-coral/10 text-dq-coral'}`}>
                   {testimonial.metric} {testimonial.metricLabel}
                 </span>
               </div>
-              <button className="text-blue-600 hover:text-blue-800 text-sm font-medium flex items-center" onClick={onClose}>
+              <button className="text-dq-coral hover:brightness-110 text-sm font-medium flex items-center" onClick={onClose}>
                 Close
               </button>
             </div>
@@ -351,7 +330,7 @@ const VideoTestimonialCarousel = () => {
       </div>
       {/* Pagination indicators */}
       <div className="flex justify-center mt-4 gap-2">
-        {testimonials.map((_, index) => <button key={index} className={`w-2 h-2 rounded-full transition-all ${activeIndex === index ? 'bg-blue-600 w-6' : 'bg-gray-300'}`} onClick={() => setActiveIndex(index)} aria-label={`Go to testimonial ${index + 1}`} />)}
+        {testimonials.map((_, index) => <button key={index} className={`w-2 h-2 rounded-full transition-all ${activeIndex === index ? 'bg-dq-coral w-6' : 'bg-gray-300'}`} onClick={() => setActiveIndex(index)} aria-label={`Go to testimonial ${index + 1}`} />)}
       </div>
       {/* Modal */}
       <TestimonialModal testimonial={selectedTestimonial} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
@@ -493,10 +472,10 @@ const FeaturedPartnersCarousel = () => {
       {/* Heading */}
       <FadeInUpOnScroll className="text-center mb-6">
         <h3 className="text-2xl font-bold text-gray-900 mb-2">
-          Featured Partners
+          Featured Units
         </h3>
         <p className="text-gray-600">
-          Trusted by leading organizations across the UAE
+          Trusted core factories and streams across DQ
         </p>
       </FadeInUpOnScroll>
       {/* Carousel container */}
@@ -531,47 +510,42 @@ const ProofAndTrust: React.FC = () => {
         {/* Why Abu Dhabi / Platform Impact */}
         <div className="mb-16">
           <FadeInUpOnScroll className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">
-              Why Abu Dhabi for Your Business Growth
+            <h2 className="text-3xl font-bold text-gray-900 mb-3 clamp-1">
+              Why Agile Working for faster Growth
             </h2>
-            <div className="relative">
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
-                Abu Dhabi provides a strategic location, world-class
-                infrastructure, and a business-friendly environment for
-                enterprises at every stage
+            <div>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8 text-balance clamp-2">
+                DQ Digital Workspace unifies learning, requests, and collaboration so everyone can work smarter, faster, and grow with confidence.
               </p>
-              <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-400"></div>
             </div>
           </FadeInUpOnScroll>
           <StaggeredFadeIn className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto" staggerDelay={0.15}>
-            {impactStats.map((stat, index) => <div key={index} className="bg-blue-50 rounded-lg p-6 text-center shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1">
+            {impactStats.map((stat, index) => <div key={index} className="rounded-2xl bg-dq-navy/5 p-8 text-center shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1 min-h-[220px] h-full flex flex-col items-center">
                 <div className="flex justify-center mb-3">
                   <div className="relative">
                     {stat.icon}
-                    <div className="absolute inset-0 bg-blue-400 rounded-full opacity-0 animate-ping-slow"></div>
+                    <div className="absolute inset-0 bg-dq-coral/40 rounded-full opacity-0 animate-ping-slow"></div>
                   </div>
                 </div>
-                <div className="text-3xl font-bold text-blue-700 mb-2 flex justify-center">
+                <div className="text-3xl font-bold text-dq-navy mb-2 flex items-baseline justify-center gap-1">
                   {stat.prefix && <span>{stat.prefix}</span>}
                   <AnimatedCounter value={stat.value} />
                   {stat.suffix && <span>{stat.suffix}</span>}
                 </div>
-                <div className="text-gray-600">{stat.label}</div>
+                <div className="text-gray-600 mt-auto">{stat.label}</div>
               </div>)}
           </StaggeredFadeIn>
         </div>
         {/* Success Stories */}
         <div className="mb-16 bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 overflow-hidden relative">
           <FadeInUpOnScroll className="text-center mb-10 relative z-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">
-              Success Stories from Abu Dhabi Enterprises
+            <h2 className="text-3xl font-bold text-gray-900 mb-3 clamp-1">
+              Success Stories from DQ Employees
             </h2>
-            <div className="relative">
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Hear how SMEs scaled their business using the Enterprise Journey
-                Platform
+            <div>
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto clamp-2">
+                Discover how DQ teams use the Digital Workspace to boost productivity and collaboration every day.
               </p>
-              <div className="absolute left-1/2 bottom-0 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-blue-500 to-teal-400"></div>
             </div>
           </FadeInUpOnScroll>
           <VideoTestimonialCarousel />
@@ -580,15 +554,12 @@ const ProofAndTrust: React.FC = () => {
         <div className="mb-16 bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 md:p-12 overflow-hidden relative">
           {/* Section Title with Animation */}
           <HorizontalScrollReveal direction="left" className="text-center mb-10 relative z-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-3 relative inline-block">
-              Powered by Strategic Partnerships
-              <span className="absolute -bottom-1 left-0 w-0 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 animate-expand-line"></span>
+            <h2 className="text-3xl font-bold text-gray-900 mb-3 clamp-1">
+              Our Four Pillars of Success
             </h2>
             <div className="relative">
-              <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Our network of government bodies, financial institutions, and
-                service providers ensures comprehensive support for your
-                business journey
+              <p className="text-lg text-gray-600 max-w-3xl mx-auto clamp-2">
+                Governance, operations, platforms, and delivery — DQ's four pillars that drive every associate's success.
               </p>
             </div>
           </HorizontalScrollReveal>

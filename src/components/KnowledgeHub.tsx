@@ -45,225 +45,202 @@ interface KnowledgeHubProps {
 // Mock data for fallback - keep the existing data
 const newsItems: NewsItem[] = [{
   id: '1',
-  title: 'Abu Dhabi Launches New SME Support Program',
-  excerpt: 'The Abu Dhabi government has launched a new program to support SMEs with access to funding and resources.',
-  date: 'May 15, 2023',
-  category: 'Government',
-  source: 'Abu Dhabi Times',
-  imageUrl: 'https://images.unsplash.com/photo-1534224039826-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+  title: 'Agile Working at DQ | Not Just for Projects',
+  excerpt: 'Discover how agile principles are helping teams across DQ collaborate faster and deliver with confidence.',
+  date: 'August 21, 2025',
+  category: 'Agile Working',
+  source: 'DQ Insights',
+  imageUrl: 'https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
 }, {
   id: '2',
-  title: 'Tech Startups in Abu Dhabi See 40% Growth',
-  excerpt: 'Technology startups in Abu Dhabi have seen a 40% growth in the past year, according to a new report.',
-  date: 'April 28, 2023',
-  category: 'Technology',
-  source: 'TechNews Daily',
-  imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+  title: 'From Vision to Impact | The DQ Storybook Goes Live!',
+  excerpt: 'The DQ Storybook is now published—bringing together our competencies, values, and transformation journey.',
+  date: 'August 14, 2025',
+  category: 'Strategy',
+  source: 'DQ Governance Office',
+  imageUrl: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
 }, {
   id: '3',
-  title: 'New E-commerce Regulations to Boost Online Businesses',
-  excerpt: 'Abu Dhabi has introduced new e-commerce regulations aimed at boosting online businesses in the emirate.',
-  date: 'April 10, 2023',
-  category: 'Regulations',
-  source: 'Business Insider UAE',
-  imageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+  title: 'Leadership Principles | What’s Your Superpower?',
+  excerpt: 'Uncover what makes effective leaders thrive at DQ and explore practical tools to grow your leadership strengths.',
+  date: 'August 19, 2025',
+  category: 'Leadership',
+  source: 'DQ Learning Hub',
+  imageUrl: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
 }, {
   id: '4',
-  title: 'Abu Dhabi Investment Fund Allocates AED 1 Billion for Startups',
-  excerpt: 'A new investment fund has been established to support innovative startups in key sectors.',
-  date: 'March 22, 2023',
-  category: 'Investment',
-  source: 'Financial Times UAE',
-  imageUrl: 'https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+  title: 'Grounded in Growth and Emotional Intelligence',
+  excerpt: 'Learn how emotional intelligence drives collaboration, resilience, and growth across our teams.',
+  date: 'August 8, 2025',
+  category: 'Culture',
+  source: 'DQ Culture Team',
+  imageUrl: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
 }, {
   id: '5',
-  title: 'Abu Dhabi Economic Vision 2030 Progress Report Released',
-  excerpt: 'The latest progress report shows significant advancements in key economic sectors.',
-  date: 'March 10, 2023',
-  category: 'Government',
-  source: 'Government News Network',
-  imageUrl: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+  title: 'Shifts Allocation Guidelines Released',
+  excerpt: 'New workspace guidelines launched to improve workload balance, transparency, and efficiency.',
+  date: 'July 25, 2025',
+  category: 'Policy Update',
+  source: 'DQ Operations',
+  imageUrl: 'https://images.unsplash.com/photo-1545239351-1141bd82e8a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
 }, {
   id: '6',
-  title: 'New Digital Innovation Hub Opens in Abu Dhabi',
-  excerpt: 'A state-of-the-art innovation hub has opened to foster technology development and entrepreneurship.',
-  date: 'February 28, 2023',
-  category: 'Technology',
-  source: 'Innovation Digest',
+  title: 'New DQ Innovation Hub Opens',
+  excerpt: 'A digital hub for experimentation and collaboration is now live, inviting teams to explore and innovate together.',
+  date: 'July 10, 2025',
+  category: 'Innovation',
+  source: 'DQ Labs',
   imageUrl: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
 }];
 
 const events: Event[] = [{
   id: '1',
-  title: 'Abu Dhabi Business Forum 2023',
-  date: 'June 15-16, 2023',
-  location: 'Abu Dhabi National Exhibition Centre',
-  type: 'Conference',
-  organizer: 'Abu Dhabi Chamber of Commerce',
+  title: 'DQ Strategy & Mission Forum 2025',
+  date: 'October 18–19, 2025',
+  location: 'OPAL Tower, Business Bay, Dubai',
+  type: 'Forum',
+  organizer: 'Digital Qatalyst',
   imageUrl: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
 }, {
   id: '2',
-  title: 'Startup Pitch Competition',
-  date: 'May 25, 2023',
-  location: 'Hub71, Abu Dhabi',
-  type: 'Competition',
-  organizer: 'Hub71',
+  title: 'Agile Delivery Circle – Sprint Planning Masterclass',
+  date: 'October 25, 2025',
+  location: 'OPAL Tower, Business Bay, Dubai',
+  type: 'Workshop',
+  organizer: 'DQ Agile office',
   imageUrl: 'https://images.unsplash.com/photo-1591115765373-5207764f72e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
 }, {
   id: '3',
-  title: 'Digital Transformation Workshop',
-  date: 'June 5, 2023',
-  location: 'Yas Creative Hub',
+  title: 'Leadership & Emotional Intelligence Session',
+  date: 'November 4, 2025',
+  location: 'OPAL Tower, Business Bay, Dubai',
   type: 'Workshop',
-  organizer: 'Digital Abu Dhabi',
+  organizer: 'DQ Culture & Community',
   imageUrl: 'https://images.unsplash.com/photo-1540317580384-e5d43867caa6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
 }, {
   id: '4',
-  title: 'Export Market Opportunities Seminar',
-  date: 'July 10, 2023',
-  location: 'ADGM, Al Maryah Island',
-  type: 'Seminar',
-  organizer: 'Abu Dhabi Export Office',
+  title: 'Data Fluency Week – Power BI Hands-on',
+  date: 'November 11–15, 2025',
+  location: 'OPAL Tower, Business Bay, Dubai',
+  type: 'Bootcamp',
+  organizer: 'DQ Analytics Office',
   imageUrl: 'https://images.unsplash.com/photo-1559223607-a43f990c095d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
 }, {
   id: '5',
-  title: 'Global Trade Summit',
-  date: 'August 3-5, 2023',
-  location: 'Etihad Towers Conference Centre',
-  type: 'Summit',
-  organizer: 'Ministry of Economy',
+  title: 'Product Growth & Value Streams Meetup',
+  date: 'November 21, 2025',
+  location: 'OPAL Tower, Business Bay, Dubai',
+  type: 'Meetup',
+  organizer: 'DQ Deploy Team',
   imageUrl: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80'
 }, {
   id: '6',
-  title: 'Entrepreneurship Masterclass',
-  date: 'September 15, 2023',
-  location: 'NYU Abu Dhabi',
-  type: 'Workshop',
-  organizer: 'Khalifa Fund',
+  title: 'DQ End-of-Year Learning Showcase',
+  date: 'December 10, 2025',
+  location: 'OPAL Tower, Business Bay, Dubai',
+  type: 'Showcase',
+  organizer: 'DQ Academy',
   imageUrl: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
 }];
 
 const resources: Resource[] = [{
   id: '1',
-  title: 'Business Plan Template',
-  type: 'Templates',
-  description: 'Comprehensive business plan template with financial projections, market analysis, and strategic planning sections. Perfect for startups.',
+  title: 'DQ Handbook – Working the Catalyst Way',
+  type: 'Guide',
+  description: 'Your essential guide to Digital Qatalyst — principles, culture, and collaboration practices that power every team.',
   icon: <FileText size={24} className="text-blue-600" />,
   downloadUrl: '#',
   fileSize: '2.5 MB',
   downloadCount: 1847,
   lastUpdated: 'January 2024',
-  tags: ['Business', 'Template']
+  tags: ['Culture', 'Guide']
 }, {
   id: '2',
-  title: 'Export Market Analysis Report',
-  type: 'Guide',
-  description: 'Detailed analysis of export opportunities for Abu Dhabi businesses with market insights and regulatory information.',
+  title: 'Agile Playbook – SEDU Framework',
+  type: 'Template',
+  description: 'Standard agile templates and sprint planning boards aligned to the SEDU delivery model for teams across DQ.',
   icon: <BookOpen size={24} className="text-blue-600" />,
   downloadUrl: '#',
   fileSize: '4.1 MB',
   downloadCount: 3254,
   lastUpdated: 'December 2023',
-  tags: ['Export', 'Market Research']
+  tags: ['Agile', 'Delivery']
 }, {
   id: '3',
-  title: 'Financial Planning Templates',
-  type: 'Templates',
-  description: 'Ready-to-use templates for financial planning and forecasting with automated calculations and projections.',
+  title: 'Power BI Dashboard Starter Pack',
+  type: 'Toolkit',
+  description: 'Get prebuilt dashboard templates and data model examples for reporting within DQ projects.',
   icon: <FileText size={24} className="text-blue-600" />,
   downloadUrl: '#',
   fileSize: '1.8 MB',
   downloadCount: 5632,
   lastUpdated: 'February 2024',
-  tags: ['Finance', 'Planning']
+  tags: ['Analytics', 'Power BI']
 }, {
   id: '4',
-  title: 'SME Growth Toolkit',
-  type: 'Guide',
-  description: 'Essential resources and strategies for small and medium enterprise growth in Abu Dhabi market conditions.',
+  title: 'LLAD Template – Repository Setup',
+  type: 'Template',
+  description: 'A ready-to-use Logical Layered Architecture Document (LLAD) format for Ardoq and Abacus repository configurations.',
   icon: <BookOpen size={24} className="text-blue-600" />,
   downloadUrl: '#',
   fileSize: '3.2 MB',
   downloadCount: 2187,
   lastUpdated: 'January 2024',
-  tags: ['SME', 'Growth']
+  tags: ['Architechture', 'Template']
 }, {
   id: '5',
-  title: 'Digital Marketing Handbook',
+  title: 'DQ Governance & Compliance Guide',
   type: 'Guide',
-  description: 'Complete guide to digital marketing strategies including SEO, social media, content marketing, and paid advertising best practices.',
+  description: 'Comprehensive overview of DQ governance workflows, approvals, and compliance practices for associates.',
   icon: <BookOpen size={24} className="text-blue-600" />,
   downloadUrl: '#',
   fileSize: '4.5 MB',
   downloadCount: 8967,
   lastUpdated: 'December 2023',
-  tags: ['Marketing', 'Digital']
+  tags: ['Governace', 'Comliance']
 }, {
   id: '6',
-  title: 'Financial Calculator Tool',
+  title: 'Collaboration Toolkit – Viva & Teams',
   type: 'Tool',
-  description: 'Interactive online calculator for loan payments, investment returns, and financial planning. Access powerful calculations instantly.',
+  description: 'Quick-access resources for setting up Viva Engage posts, Teams collaboration boards, and L&D channels.',
   icon: <Calculator size={24} className="text-blue-600" />,
   downloadUrl: '#',
   fileSize: 'External',
   downloadCount: 12456,
   lastUpdated: 'February 2024',
-  isExternal: true,
-  tags: ['Finance', 'Calculator']
+  tags: ['Collaboration', 'L&D']
 }];
 
 // Define interface for tab items
+type TabId = 'news' | 'events' | 'resources';
+
 interface TabItem {
-  id: string;
+  id: TabId;
   label: string;
-  icon: React.ReactNode;
+  icon: string;
 }
 
-// Update SegmentedTabs props interface
 interface SegmentedTabsProps {
   tabs: TabItem[];
-  activeTab: number;
-  setActiveTab: (index: number) => void;
+  activeTab: TabId;
+  onTabChange: (id: TabId) => void;
 }
 
-// Segmented Tab Component
 const SegmentedTabs: React.FC<SegmentedTabsProps> = ({
   tabs,
   activeTab,
-  setActiveTab
+  onTabChange
 }) => {
-  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const [indicatorStyle, setIndicatorStyle] = useState({
-    left: 0,
-    width: 0
-  });
-  useEffect(() => {
-    const activeTabElement = tabRefs.current[activeTab];
-    if (activeTabElement) {
-      setIndicatorStyle({
-        left: activeTabElement.offsetLeft,
-        width: activeTabElement.offsetWidth
-      });
-    }
-  }, [activeTab]);
-  return <div className="relative inline-flex bg-white rounded-full shadow-sm p-1 mx-auto mb-8">
-      {/* Animated background indicator */}
-      <div className="absolute bottom-0 h-full bg-blue-50 rounded-full transition-all duration-300 z-0" style={{
-      left: `${indicatorStyle.left}px`,
-      width: `${indicatorStyle.width}px`
-    }}></div>
-      {/* Animated underline */}
-      <div className="absolute bottom-1 h-0.5 bg-blue-600 rounded-full transition-all duration-300 z-10" style={{
-      left: `${indicatorStyle.left + 8}px`,
-      width: `${indicatorStyle.width - 16}px`
-    }}></div>
-      {tabs.map((tab, index) => <button key={tab.id} ref={el => tabRefs.current[index] = el} onClick={() => setActiveTab(index)} className={`relative z-10 px-5 py-2 text-sm font-medium rounded-full transition-all duration-300 flex items-center
-            ${activeTab === index ? 'text-blue-700' : 'text-gray-600 hover:text-gray-900'}`}>
-          {tab.icon}
-          <span className="ml-1">{tab.label}</span>
-          {/* Ripple effect */}
-          {activeTab === index && <span className="absolute inset-0 rounded-full animate-ripple bg-blue-200 opacity-30"></span>}
-        </button>)}
+  return <div className="w-full flex justify-center mb-6">
+      <div className="inline-flex items-center rounded-full bg-white shadow-sm ring-1 ring-black/5 px-1 py-1">
+        {tabs.map(tab => {
+        const isActive = activeTab === tab.id;
+        return <button key={tab.id} onClick={() => onTabChange(tab.id)} className={`relative mx-0.5 px-4 sm:px-5 py-2 rounded-full text-sm font-medium transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-[#5B8EFF]/40 inline-flex items-center ${isActive ? 'bg-[#DDE8FF] text-[#030F35] shadow-[inset_0_-2px_0_0_#5B8EFF]' : 'text-[#3b4a66] hover:bg-[#F5F8FF]'}`} aria-pressed={isActive}>
+              <span className="mr-2" aria-hidden="true">{tab.icon}</span>
+              {tab.label}
+            </button>;
+      })}
+      </div>
     </div>;
 };
 
@@ -289,31 +266,31 @@ const KnowledgeHubContent = ({
   graphqlEndpoint
 }) => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState(0); // 0: News, 1: Events, 2: Resources
+  const [activeTab, setActiveTab] = useState<TabId>('news');
   const [isTabChanging, setIsTabChanging] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<{ message: string } | null>(null);
   
-  // Define tabs
-  const tabs = [{
+  const tabs: TabItem[] = [{
     id: 'news',
     label: 'News',
-    icon: <Newspaper size={16} className="text-blue-600" />
+    icon: <Newspaper size={16} className="#030F35-600" />
   }, {
     id: 'events',
     label: 'Events',
-    icon: <Calendar size={16} className="text-blue-600" />
+    icon: <Calendar size={16} className="#030F35-600" />
   }, {
     id: 'resources',
     label: 'Resources',
-    icon: <BookOpen size={16} className="text-blue-600" />
+    icon: <BookOpen size={16} className="#030F35-600" />
   }];
   
   // Handle tab change with animation
-  const handleTabChange = index => {
+  const handleTabChange = (id: TabId) => {
+    if (activeTab === id) return;
     setIsTabChanging(true);
     setTimeout(() => {
-      setActiveTab(index);
+      setActiveTab(id);
       setIsTabChanging(false);
     }, 300);
   };
@@ -327,13 +304,13 @@ const KnowledgeHubContent = ({
   const getResourceIconByType = type => {
     switch (type?.toLowerCase()) {
       case 'guide':
-        return <BookOpen size={24} className="text-blue-600" />;
+        return <BookOpen size={24} className="#030F35-600" />;
       case 'templates':
-        return <FileText size={24} className="text-blue-600" />;
+        return <FileText size={24} className="#030F35-600" />;
       case 'tool':
-        return <Calculator size={24} className="text-blue-600" />;
+        return <Calculator size={24} className="#030F35-600" />;
       default:
-        return <FileText size={24} className="text-blue-600" />;
+        return <FileText size={24} className="#030F35-600" />;
     }
   };
   
@@ -396,19 +373,15 @@ const KnowledgeHubContent = ({
   return <div className="bg-gray-50 py-16">
       <div className="container mx-auto px-4">
         <FadeInUpOnScroll className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-3 relative inline-block">
-            Stay Ahead with Expert Insights
-            <span className="absolute left-0 bottom-0 w-full h-1 bg-gradient-to-r from-blue-500 to-teal-400 transform origin-left"></span>
+          <h2 className="text-3xl font-bold text-gray-900 mb-3 clamp-1">
+            Stay Ahead with Workspace Insights
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Access the latest news, events, and resources to help your business
-            thrive in Abu Dhabi
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto clamp-2">
+            Stay current with DQ updates, insights, and events designed to help you work smarter and grow every day.
           </p>
         </FadeInUpOnScroll>
         {/* Segmented Tabs */}
-        <div className="flex justify-center mb-8">
-          <SegmentedTabs tabs={tabs} activeTab={activeTab} setActiveTab={handleTabChange} />
-        </div>
+        <SegmentedTabs tabs={tabs} activeTab={activeTab} onTabChange={handleTabChange} />
         {/* Tab Content with Fade Transition */}
         <div className={`transition-opacity duration-300 ${isTabChanging ? 'opacity-0' : 'opacity-100'}`}>
           {/* Loading State */}
@@ -416,7 +389,7 @@ const KnowledgeHubContent = ({
           {/* Error State */}
           {error && !isLoading && <ErrorMessage message={error.message} />}
           {/* News Tab */}
-          {activeTab === 0 && !isLoading && !error && <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {activeTab === 'news' && !isLoading && !error && <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {getNewsData().map((item, index) => <div key={item.id} className="animate-fade-in-up" style={{
             animationDelay: `${index * 0.1}s`
           }}>
@@ -431,7 +404,7 @@ const KnowledgeHubContent = ({
                 </div>)}
             </div>}
           {/* Events Tab */}
-          {activeTab === 1 && !isLoading && !error && <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {activeTab === 'events' && !isLoading && !error && <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {getEventsData().map((event, index) => <div key={event.id} className="animate-fade-in-up" style={{
             animationDelay: `${index * 0.1}s`
           }}>
@@ -452,7 +425,7 @@ const KnowledgeHubContent = ({
                 </div>)}
             </div>}
           {/* Resources Tab */}
-          {activeTab === 2 && !isLoading && !error && <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {activeTab === 'resources' && !isLoading && !error && <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {getResourcesData().map((resource, index) => <div key={resource.id} className="animate-zoom-in" style={{
             animationDelay: `${index * 0.1}s`
           }}>
