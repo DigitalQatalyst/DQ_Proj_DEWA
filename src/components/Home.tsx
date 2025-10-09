@@ -26,6 +26,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { AnimatedCounter, FadeInUpOnScroll, useInView } from './AnimationUtils';
+import ServiceCarousel from './marketplace/ServiceCarousel';
 
 /* ----------------------------- AI Chatbot ----------------------------- */
 const AIChatbot = () => {
@@ -506,10 +507,12 @@ export const HomePage: React.FC = () => {
             <FadeInUpOnScroll>
               <CategoryHeader icon={<GraduationCap size={24} />} title="Learning & Enablement" count={4} />
             </FadeInUpOnScroll>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {allServices.finance.map((service, index) => (
-                <div key={service.id} className="flex-1 min-w-0 basis-[300px] grow-0 shrink-0">
-                  <FadeInUpOnScroll delay={index * 0.1}>
+            <ServiceCarousel
+              services={allServices.finance}
+              renderCard={service => {
+                const index = allServices.finance.findIndex(item => item.id === service.id);
+                return (
+                  <FadeInUpOnScroll key={service.id} delay={index * 0.1}>
                     <ServiceCard
                       service={service}
                       sectionStyle={sectionStyles['Learning & Enablement']}
@@ -517,9 +520,9 @@ export const HomePage: React.FC = () => {
                       isComingSoon={!service.isActive}
                     />
                   </FadeInUpOnScroll>
-                </div>
-              ))}
-            </div>
+                );
+              }}
+            />
           </div>
 
           {/* Row 2 */}
@@ -527,10 +530,12 @@ export const HomePage: React.FC = () => {
             <FadeInUpOnScroll>
               <CategoryHeader icon={<Briefcase size={24} />} title="Services & Requests" count={4} />
             </FadeInUpOnScroll>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {allServices.advisory.map((service, index) => (
-                <div key={service.id} className="flex-1 min-w-0 basis-[300px] grow-0 shrink-0">
-                  <FadeInUpOnScroll delay={index * 0.1}>
+            <ServiceCarousel
+              services={allServices.advisory}
+              renderCard={service => {
+                const index = allServices.advisory.findIndex(item => item.id === service.id);
+                return (
+                  <FadeInUpOnScroll key={service.id} delay={index * 0.1}>
                     <ServiceCard
                       service={service}
                       sectionStyle={sectionStyles['Services & Requests']}
@@ -538,9 +543,9 @@ export const HomePage: React.FC = () => {
                       isComingSoon={!service.isActive}
                     />
                   </FadeInUpOnScroll>
-                </div>
-              ))}
-            </div>
+                );
+              }}
+            />
           </div>
 
           {/* Row 3 */}
@@ -548,10 +553,12 @@ export const HomePage: React.FC = () => {
             <FadeInUpOnScroll>
               <CategoryHeader icon={<Users size={24} />} title="Collaboration & Communities" count={5} />
             </FadeInUpOnScroll>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {allServices.growth.map((service, index) => (
-                <div key={service.id} className="flex-1 min-w-0 basis-[300px] grow-0 shrink-0">
-                  <FadeInUpOnScroll delay={index * 0.1}>
+            <ServiceCarousel
+              services={allServices.growth}
+              renderCard={service => {
+                const index = allServices.growth.findIndex(item => item.id === service.id);
+                return (
+                  <FadeInUpOnScroll key={service.id} delay={index * 0.1}>
                     <ServiceCard
                       service={service}
                       sectionStyle={sectionStyles['Collaboration & Communities']}
@@ -559,9 +566,9 @@ export const HomePage: React.FC = () => {
                       isComingSoon={!service.isActive}
                     />
                   </FadeInUpOnScroll>
-                </div>
-              ))}
-            </div>
+                );
+              }}
+            />
           </div>
 
           {/* Row 4 */}
@@ -569,10 +576,12 @@ export const HomePage: React.FC = () => {
             <FadeInUpOnScroll>
               <CategoryHeader icon={<BookOpen size={24} />} title="Resources & Libraries" count={8} />
             </FadeInUpOnScroll>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {allServices.learning.map((service, index) => (
-                <div key={service.id} className="flex-1 min-w-0 basis-[300px] grow-0 shrink-0">
-                  <FadeInUpOnScroll delay={index * 0.1}>
+            <ServiceCarousel
+              services={allServices.learning}
+              renderCard={service => {
+                const index = allServices.learning.findIndex(item => item.id === service.id);
+                return (
+                  <FadeInUpOnScroll key={service.id} delay={index * 0.1}>
                     <ServiceCard
                       service={service}
                       sectionStyle={sectionStyles['Resources & Libraries']}
@@ -580,9 +589,9 @@ export const HomePage: React.FC = () => {
                       isComingSoon={!service.isActive}
                     />
                   </FadeInUpOnScroll>
-                </div>
-              ))}
-            </div>
+                );
+              }}
+            />
           </div>
         </div>
       </div>
